@@ -1,6 +1,7 @@
 .navbar {
   position: fixed;
   z-index: 10;
+  top: 0;
   transition: all 300ms ease-in-out;
   padding: 32px 0px 24px 0px;
 
@@ -11,6 +12,11 @@
   .logo{
     width: 185px;
     height: 76px;
+
+    @media(max-width: 767px){
+      width: 111px;
+      height: 46px;
+    }
   }
 
   .dropdown {
@@ -166,6 +172,11 @@
 
         .logo{
           width: 173px;
+
+          @media(max-width: 767px){
+            width: 111px;
+            height: 46px;
+          }
         }
       }
 

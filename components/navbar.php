@@ -48,14 +48,13 @@ $title = get_the_title();
             </a>
 
             <ul class="items w-full flex--gap-15 flex flex--aic ff-brevia fs-16 fs-16__lg fw-bold color--white d-none__sm">
-                <?php $count = 0;
+                <?php
                 foreach ($menuItems as $item): ?>
                     <li class="item <?php echo $title == $item['name'] ? 'fw-bold active' : "fw-normal" ?> ">
                         <a href=<?php echo home_url() . '/' . $item['link'] ?>>
                             <?php echo $item['name'] ?></a>
                     </li>
-                    <?php $count++;
-                endforeach; ?>
+                    <?php endforeach; ?>
             </ul>
         </div>
     </div>
