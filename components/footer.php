@@ -52,16 +52,15 @@ $facebook_mobile =
 
 <footer class="footer relative  flex flex--column px-20 py-40 flex--jcsb background--primary-blue">
     <section class="container flex">
-        <div class="flex flex--aifs flex--gap-100 py-40__lg">
+        <div class="flex flex--aifs flex--gap-100 px-20__md py-40__md py-40__lg">
             <aside>
                 <a href="<?php echo get_home_url() ?>" class="d-block">
                     <img src="<?= get_template_directory_uri(); ?>/assets/img/logo.webp" alt="">
                 </a>
             </aside>
-            <div class="rede-sociais flex--none__md py-24 py-40__lg">
-                <p class="ff-brevia fw-semibold fs-18__lg fs-18 pb-12__lg px-160__lg">Redes Sociais</p>
-                <ul class="flex--force flex--gap-15 mt-12 px-100__md px-160__lg">
-
+            <div class="rede-sociais rede-sociais__mobile py-24 pt-12__md py-40__lg">
+                <p class="ff-brevia fw-semibold fs-18__lg fs-18 pb-12__lg">Redes Sociais</p>
+                <ul class="flex--force flex--gap-15 mt-12 mt-12__md px-160__lg">
                     <li>
                         <a href="#" target="_blank">
                             <?= $facebook_mobile; ?>
@@ -86,7 +85,7 @@ $facebook_mobile =
                 </ul>
             </div>
             <aside class="flex flex--gap-60">
-                <ul class="flex--force flex--column flex--gap-12 pb-24 ff-brevia fw-normal fs-16">
+                <ul class="flex--force flex--column flex--gap-12 pt-24__md pb-24 ff-brevia fw-normal fs-16">
                     <li class="fw-semibold fw-bold__md fs-18 fs-18__lg fw-semibold color--white">Saiba mais</li>
                     <li class='fs-16__lg'><a href="#">Embalagens</a></li>
                     <li class='fs-16__lg'><a href="#">Benefícios Lacday</a></li>
@@ -94,7 +93,7 @@ $facebook_mobile =
                     <li class='fs-16__lg'><a href="#">Onde Comprar</a></li>
                 </ul>
 
-                <ul class="flex--force flex--column flex--gap-12 ff-brevia fs-16">
+                <ul class="flex--force flex--column flex--gap-12 pt-24__md ff-brevia fs-16">
                     <li class="fw-semibold fw-bold__md fs-18 fs-18__lg color--white">Institucional</li>
                     <li class='fs-16__lg'><a href="<?= get_home_url(); ?>/">Fale Conosco</a></li>
                     <li class='fs-16__lg'><a href="<?= get_home_url(); ?>/lac">Programa Lac Lovers</a></li>
@@ -103,7 +102,7 @@ $facebook_mobile =
                 </ul>
             </aside>
         </div>
-        <div class="rede-sociais flex--none py-40__lg">
+        <div class="rede-sociais rede-sociais__desktop py-40__lg">
             <p class="ff-brevia fw-semibold fs-18__lg fs-16 pb-12__lg px-160__lg">Redes Sociais</p>
             <ul class="flex--force flex--gap-15 px-100__md px-160__lg">
 

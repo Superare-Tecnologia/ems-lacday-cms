@@ -35,7 +35,7 @@ $title = get_the_title();
 
 <nav id="navbar" class="navbar w-full px-30 px-0__lg background--primary-blue" data-script="Navbar">
 
-    <div class="container px-20">
+    <div class="container px-20 px-20__md">
         <div class="flex flex--force w-full flex--jcsb flex--aic flex--gap-45">
             <a href="<?php echo get_site_url() ?>">
                 <img class="logo" src="<?= get_template_directory_uri(); ?>/assets/img/logo.webp" alt="">
@@ -47,7 +47,7 @@ $title = get_the_title();
                 <span></span>
             </a>
 
-            <ul class="items w-full flex--gap-25 flex flex--aic ff-brevia fs-16 fs-16__lg fw-bold color--white d-none__sm">
+            <ul class="items w-full flex--gap-15 flex flex--aic ff-brevia fs-16 fs-16__lg fw-bold color--white d-none__sm">
                 <?php $count = 0;
                 foreach ($menuItems as $item): ?>
                     <li class="item <?php echo $title == $item['name'] ? 'fw-bold active' : "fw-normal" ?> ">
