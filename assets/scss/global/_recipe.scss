@@ -1,0 +1,135 @@
+.section-recipe {
+  &__head {
+    a {
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #16266c;
+
+      span {
+        height: 20px;
+        width: 20px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .arrow {
+    display: none;
+    cursor: pointer;
+    height: 56px;
+    width: 56px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 0;
+
+    @media (min-width: 1200px) {
+      display: flex;
+    }
+
+    &--disabled {
+      opacity: 0.6;
+    }
+  }
+
+  .keen-slider {
+    overflow: visible !important;
+
+    &__slide {
+      min-width: 280px;
+      max-width: 280px;
+
+      @media (min-width: 375px) {
+        min-width: 333px;
+        max-width: 333px;
+      }
+
+      @media (min-width: 1200px) {
+        min-width: 843px;
+        max-width: 843px;
+        padding-right: 50px;
+        border-right: 1px solid #dddddd;
+
+        &:last-child{
+          border-right: 0px;
+        }
+      }
+
+      article {
+        position: relative;
+
+        @media (min-width: 1200px) {
+          border-right: #dddddd;
+        }
+
+        .number {
+          order: 2;
+        }
+
+        .content {
+          order: 3;
+        }
+
+        .imagem {
+          order: 1;
+          height: 335px;
+        }
+
+        @media (min-width: 1200px) {
+          .number {
+            width: 100%;
+            max-width: 80px;
+            order: 1;
+          }
+
+          .content {
+            width: 100%;
+            max-width: 310px;
+            order: 2;
+          }
+
+          .imagem {
+            width: 100%;
+            max-width: 288px;
+            order: 3;
+            height: 381px;
+          }
+        }
+
+        .imagem {
+          position: relative;
+          width: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          p {
+            position: relative;
+            z-index: 1;
+          }
+        }
+
+        .cta {
+          text-decoration: none;
+          border-radius: 64px;
+          border: 1px solid #000000;
+          color: #000000;
+          transition: 0.3s ease all;
+          display: inline-block;
+          padding: 12px 32px;
+
+          &:hover {
+            color: white;
+            background: black;
+          }
+        }
+      }
+    }
+  }
+}

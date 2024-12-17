@@ -1,0 +1,161 @@
+$spacings: (
+  0,
+  4,
+  7,
+  10,
+  12,
+  15,
+  16,
+  20,
+  23,
+  24,
+  25,
+  30,
+  32,
+  35,
+  40,
+  45,
+  50,
+  60,
+  65,
+  70,
+  75,
+  80,
+  90,
+  100,
+  110,
+  120,
+  125,
+  160
+);
+
+.spacing-letter-2{ letter-spacing: -2px; }
+
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media(max-width: 767px){
+  @each $size in $spacings {
+    .py-#{$size} {
+      padding-top: $size + 0px;
+      padding-bottom: $size + 0px;
+    }
+    .px-#{$size} {
+      padding-left: $size + 0px;
+      padding-right: $size + 0px;
+    }
+    .pt-#{$size} {
+      padding-top: $size + 0px;
+    }
+    .pb-#{$size} {
+      padding-bottom: $size + 0px;
+    }
+    .padding-#{$size} {
+      padding: $size + 0px;
+    }
+  
+    .my-#{$size} {
+      margin-top: $size + 0px;
+      margin-bottom: $size + 0px;
+    }
+    .mx-#{$size} {
+      margin-left: $size + 0px;
+      margin-right: $size + 0px;
+    }
+    .mt-#{$size} {
+      margin-top: $size + 0px;
+    }
+    .mb-#{$size} {
+      margin-bottom: $size + 0px;
+    }
+    .margin-#{size} {
+      margin: $size + 0px;
+    }
+  }
+}
+
+
+@media (min-width: 767px) {
+  @each $size in $spacings {
+    .py-#{$size}__md {
+      padding-top: $size + 0px;
+      padding-bottom: $size + 0px;
+    }
+    .px-#{$size}__md {
+      padding-left: $size + 0px;
+      padding-right: $size + 0px;
+    }
+    .pt-#{$size}__md {
+      padding-top: $size + 0px;
+    }
+    .pb-#{$size}__md {
+      padding-bottom: $size + 0px;
+    }
+    .padding-#{$size}__md {
+      padding: $size + 0px;
+    }
+
+    .my-#{$size}__md {
+      margin-top: $size + 0px;
+      margin-bottom: $size + 0px;
+    }
+    .mx-#{$size}__md {
+      margin-left: $size + 0px;
+      margin-right: $size + 0px;
+    }
+    .mt-#{$size}__md {
+      margin-top: $size + 0px;
+    }
+    
+    .mb-#{$size}__md {
+      margin-bottom: $size + 0px;
+    }
+    .margin-#{size}__md {
+      margin: $size + 0px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  @each $size in $spacings {
+    .py-#{$size}__lg {
+      padding-top: $size + 0px;
+      padding-bottom: $size + 0px;
+    }
+    .px-#{$size}__lg {
+      padding-left: $size + 0px;
+      padding-right: $size + 0px;
+    }
+    .pt-#{$size}__lg {
+      padding-top: $size + 0px;
+    }
+    .pb-#{$size}__lg {
+      padding-bottom: $size + 0px;
+    }
+    .padding-#{$size}__lg {
+      padding: $size + 0px;
+    }
+
+    .my-#{$size}__lg {
+      margin-top: $size + 0px;
+      margin-bottom: $size + 0px;
+    }
+    .mx-#{$size}__lg {
+      margin-left: $size + 0px;
+      margin-right: $size + 0px;
+    }
+    .mt-#{$size}__lg {
+      margin-top: $size + 0px;
+    }
+    
+    .mb-#{$size}__lg {
+      margin-bottom: $size + 0px;
+    }
+    .margin-#{size}__lg {
+      margin: $size + 0px;
+    }
+  }
+}

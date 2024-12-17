@@ -1,0 +1,57 @@
+.related-recipes {
+    &__head {
+    }
+  
+    .arrow {
+      display: none;
+      background: transparent;
+      cursor: pointer;
+      height: 56px;
+      width: 56px;
+      border-radius: 6px;
+      border: 0;
+      background: #F9F9F9;
+  
+      @media (min-width: 1200px) {
+        display: flex;
+      }
+  
+      &--disabled {
+        opacity: 0.6;
+      }
+    }
+  
+    .keen-slider {
+      overflow: visible !important;
+  
+      &__slide {
+        min-width: 300px;
+        max-width: 300px;
+
+        @media(min-width: 375px){
+            min-width: 335px;
+            max-width: 335px;
+
+        }
+
+        @media(min-width: 767px){
+            min-width: 389px;
+            max-width: 389px;
+            width: 389px;
+        }
+
+        .box{
+            height: 300px;
+            
+            @media(min-width: 375px){
+                height: 335px;
+            }
+
+            @media(min-width: 767px){
+                height: 384px;
+            }
+        }
+
+      }
+    }
+  }

@@ -1,0 +1,9 @@
+.anchor {
+  position: relative;
+  text-decoration: none;
+  color: map.get($colors, "primary-navy");
+
+  &--hover {
+    transition: color 150ms ease;
+  }
+}

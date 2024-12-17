@@ -1,0 +1,108 @@
+// Variables
+$fontWeights: (
+  "black": 900,
+  "bold": 700,
+  "semibold": 600,
+  "medium": 500,
+  "normal": 400,
+  "thin": 300,
+  "lighter": 100,
+);
+
+$fontSizes: (
+  12,
+  14,
+  16,
+  18,
+  20,
+  22,
+  24,
+  26,
+  28,
+  30,
+  32,
+  36,
+  38,
+  40,
+  42,
+  44,
+  46,
+  48,
+  50,
+  52,
+  64,
+  68,
+  70,
+  80,
+  90
+);
+
+$lineHeights: (100, 120, 130, 150);
+
+/* Properties */
+ .ff-brevia {
+  font-family: "Brevia", Arial, Helvetica, sans-serif;
+}
+
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.tt-uppercase {
+  text-transform: uppercase;
+}
+
+@each $name, $size in $fontWeights {
+  .fw-#{$name} {
+    font-weight: $size;
+  }
+}
+
+@each $size in $fontSizes {
+  .fs-#{$size} {
+    font-size: px-to-rem($size);
+  }
+}
+
+@each $height in $lineHeights {
+  .lh-#{$height} {
+    line-height: $height + 0%;
+  }
+}
+
+@media (min-width: 1200px) {
+  @each $size in $fontSizes {
+    .fs-#{$size}__lg {
+      font-size: px-to-rem($size);
+    }
+  }
+
+  @each $name, $size in $fontWeights {
+    .fw-#{$name}__lg {
+      font-weight: $size;
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  @each $size in $fontSizes {
+    .fs-#{$size}__md {
+      font-size: px-to-rem($size);
+    }
+  }
+
+  @each $name, $size in $fontWeights {
+    .fw-#{$name}__md {
+      font-weight: $size;
+    }
+  }
+}

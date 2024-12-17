@@ -1,0 +1,18 @@
+@use "sass:map";
+@import url("https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+// Root
+@import "./vendors", "./reset", "./grids", "./variables", "./root", "./mixins",
+  "./functions", "./spacings", "./fonts", "./colors", "./helpers";
+
+// sections global
+@import "./global/global";
+
+// Custom components
+@import "./components/anchors", "./components/buttons", "./components/header",
+  "./components/navbar", "./components/footer", "./components/card-recipe";
+
+  
+@import "./views/views";
+

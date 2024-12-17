@@ -1,0 +1,156 @@
+// Container
+.container {
+  width: 100%;
+
+  @media (min-width: 1200px) {
+    width: 1120px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+// Flex props
+$gaps: ( 4, 6 ,7, 8, 12, 15, 16, 20, 24,25, 30, 32, 45, 50, 60, 65, 70, 75, 80, 90, 100);
+
+.d-block {
+  display: block;
+}
+
+.flex {
+  /**
+  * [!] THIS IS NOT CONTROVERSIAL [!]
+  * As the layout doesnt make usage of flex (grouped elements horizontally)
+  * and the code is mobile-first, the flex property returns to a default
+  * type of display and stacking sections and divs up and down eachothers.
+  * For full flex usage (mobile and desktop) use: "flex flex--force".
+  */
+  display: block;
+
+  &--force {
+    display: flex;
+  }
+
+  &--none {
+    display: none;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+  // Flex helpers
+  &--jcc {
+    justify-content: center;
+  }
+
+  &--jcfe {
+    justify-content: flex-end;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--jcsa {
+    justify-content: space-around;
+  }
+
+  &--jcsb {
+    justify-content: space-between;
+  }
+
+  &--aic {
+    align-items: center;
+  }
+
+  &--aifs {
+    align-items: flex-start;
+  }
+
+  &--aife {
+    align-items: flex-end;
+  }
+
+  &--row {
+    flex-direction: row;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  @each $gap in $gaps {
+    &--gap-#{$gap} {
+      gap: $gap + 0px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    display: flex;
+
+    &--sm {
+      display: block;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    &--sm {
+      display: flex;
+    }
+  }
+}
+
+
+@media (min-width: 767px) {
+  .flex {
+    &--row__md{
+      flex-direction: row;
+    }
+
+    &--aic__md{
+      align-items: center;
+    }
+
+    &--column__md{
+      flex-direction: column;
+    }
+
+    &--force__md{
+      display: flex;
+    }
+
+    &--none__md{
+      display: none;
+    }
+
+    @each $gap in $gaps {
+      &--gap-#{$gap}__md {
+        gap: $gap + 0px;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .flex {
+    &--row__lg {
+      flex-direction: row;
+    }
+
+    &--aic__lg {
+      align-items: center;
+    }
+
+    &--column__lg {
+      flex-direction: column;
+    }
+
+    &--force__lg {
+      display: flex;
+    }
+
+    &--none__lg {
+      display: none;
+    }
+  }
+}

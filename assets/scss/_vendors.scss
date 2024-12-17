@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Brevia";
+    src: url('../fonts/Brevia-Black.otf') format('opentype'); /* Corrigido para 'opentype' */
+    font-weight: 900; 
+  }
+  
+  @font-face {
+    font-family: "Brevia";
+    src: url('../fonts/Brevia-Bold.otf') format('opentype'); /* Corrigido para 'opentype' */
+    font-weight: 800; 
+  }
+  
+  @font-face {
+    font-family: "Brevia";
+    src: url('../fonts/BreviaW02-Bold.ttf') format('truetype'); /* Corrigido para 'truetype' */
+    font-weight: 700; 
+  }
+  
+  @font-face {
+    font-family: "Brevia";
+    src: url('../fonts/Brevia-Medium.otf') format('opentype'); /* Corrigido para 'opentype' */
+    font-weight: 600; 
+  }
+  
+  @font-face {
+    font-family: "Brevia";
+    src: url('../fonts/BreviaW02-Regular.ttf') format('truetype'); /* Corrigido para 'truetype' */
+    font-weight: 500;
+  }

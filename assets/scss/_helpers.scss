@@ -1,0 +1,71 @@
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.w-zero {
+  width: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.z1 {
+  position: relative;
+  z-index: 1;
+}
+
+.td-none{
+  text-decoration: none;
+}
+
+.opacity--8{
+  opacity: 0.8;
+}
+@media (min-width: 1200px) {
+  .img-responsive__lg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .d-none__lg {
+    display: none !important;
+  }
+}
+
+
+
+
+
+@media (max-width: 1199px) {
+  .img-responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .d-none__sm {
+    display: none !important;
+  }
+}
+
+// Triangles
+.triangle {
+  width: 0; 
+  height: 0; 
+  
+  &--down {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid map.get($colors, "secondary-orange");
+  }
+}

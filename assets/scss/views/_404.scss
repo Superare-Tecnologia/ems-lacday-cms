@@ -1,0 +1,65 @@
+&__not-found {
+  // padding: 200px 0;
+  height: 800px;
+  display: flex;
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // width: 50%;
+
+    @media(max-width: 430px){
+    width: 100%;
+    }
+
+    h1 {
+      line-height: 46px;
+    }
+
+    p {
+      line-height: 24px;
+      width: 51%;
+
+      @media(max-width: 1366px){
+        width: 40%;
+      }
+
+      @media(max-width: 430px){
+        width: 100%;
+      }
+    }
+
+    a {
+      padding: 12px;
+      border-radius: 48px;
+      text-decoration: none;
+      border: 1px solid #bdbdbd;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 40%;
+      justify-content: center;
+      color: map.get($colors, "primary-navy");
+
+      @media(max-width: 430px){
+        width: 100%;
+      }
+    }
+  }
+
+      img {
+        width: 718px;
+        height: 661px;
+        position: absolute;
+        
+        right: 6px;
+        bottom: 1%;
+      
+        @media(max-width: 430px){
+          display: none;
+          }
+      }
+  
+}

@@ -1,0 +1,63 @@
+.footer {
+
+  a {
+    color: map.get($colors, "white");
+    text-decoration: none;
+  }
+
+  img{
+    width: 173px;
+    height: 73px;
+  }
+
+  .rede-sociais{
+    border-radius: 160px 0;
+    position: absolute;
+    right: 0;
+    width: 566px;
+    height: 100%;
+    background-color: map.get($colors, "white");
+
+    @media(max-width: 767px){
+      background-color: map.get($colors, "primary-blue");
+    }
+
+
+    p{
+      color: map.get($colors, "primary-blue");
+
+      @media(max-width: 767px) {
+        color: map.get($colors, "white");
+      }
+    }
+
+    @media(min-width: 1400px){
+      width: 400px;
+    }
+
+    @media(max-width: 767px){
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+
+  }
+
+
+  .copyright{
+    display: flex;
+    justify-content: space-between;
+    
+    @media(max-width: 767px){
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+
+      span{
+        display: block;
+      }
+    }
+  }
+}

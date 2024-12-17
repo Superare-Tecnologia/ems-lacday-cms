@@ -1,0 +1,30 @@
+@mixin size($w, $h) {
+  @if $w {
+    width: $w;
+  }
+
+  @if $h {
+    height: $h;
+  }
+}
+
+@mixin pseudo($pos: absolute, $t: null, $l: null, $r: null, $b: null) {
+  content: "";
+  position: $pos;
+
+  @if $t {
+    top: $t;
+  }
+
+  @if $l {
+    left: $l;
+  }
+
+  @if $r {
+    right: $r;
+  }
+
+  @if $b {
+    bottom: $b;
+  }
+}

@@ -1,0 +1,14 @@
+// Colors has been inherited from _variables.scss
+@each $color, $hex in $colors {
+  .color--#{$color} {
+    color: $hex;
+  }
+
+  .background--#{$color} {
+    background-color: $hex;
+  }
+
+  .background--#{$color}-dimmed {
+    background-color: rgba($hex, 0.75);
+  }
+}

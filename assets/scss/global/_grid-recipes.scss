@@ -1,0 +1,27 @@
+.grid-recipes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;  
+
+    @media(min-width: 767px){
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media(min-width: 1200px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+
+    .box{
+        height: 335px;
+
+        @media(min-width: 767px){
+            height: 384px;
+        }
+
+        
+        @media(min-width: 1200px){
+            height: 384px;
+        }
+    }
+}

@@ -1,0 +1,183 @@
+.boss-recipe {
+  position: relative;
+
+  &__head {
+    a {
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #16266c;
+
+      span {
+        height: 20px;
+        width: 20px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .arrow {
+    display: none;
+    cursor: pointer;
+    height: 56px;
+    width: 56px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 0;
+
+    @media (min-width: 1200px) {
+      display: flex;
+    }
+
+    &--disabled {
+      opacity: 0.6;
+    }
+  }
+
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+
+  .keen-slider {
+    overflow: visible !important;
+
+    &__slide{
+      min-width: 300px;
+      max-width: 300px;
+  
+      @media(min-width:400px){
+        min-width: 335px;
+        max-width: 335px;
+      }
+  
+      @media(min-width:767px){
+        min-width: 491px;
+        max-width: 491px;
+      }
+    }
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .box{
+    height: 270px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+
+    .title{
+      max-width: 262px;
+    }
+
+    .description{
+      background: white;
+
+      span{
+        height: 24px;
+        width: 24px;
+
+        svg{
+          width: 14px;
+          height: auto;
+        }
+
+        @media(min-width: 767px){
+          height: 32px;
+          width: 32px;
+
+          svg{
+            width: 11px;
+            height: auto;
+          }
+        }
+      }
+
+
+    }
+
+    .chef-picture{
+
+      height: 32px;
+      width: 32px;
+      border-radius: 53.76px;
+      overflow: hidden;
+
+      @media(min-width: 767px){
+        height: 42px;
+        width: 42px;
+      }
+
+      img{
+        height: 100%;
+        width: 100%;
+      }
+
+    }
+
+    .content{
+      position: relative;
+    }
+
+    .fade-white{
+      display: none;
+
+      p{
+        line-height: 100%;
+        display: none;
+      }
+    }
+    
+
+    @media(min-width: 1200px){
+
+      .fade-white{
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        display: flex;
+
+        width: 153px;
+        height: 45px;
+        background-color: white;
+        border-radius: 34px;
+
+        transition: 0.3s ease all;
+        
+
+        p{
+          display: block;
+        }
+      }
+
+      .description{
+        transform: translate(0, 100%);
+        transition: 0.3s ease all;
+        background: transparent;
+      }
+
+      &:hover{
+
+        .fade-white{
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          bottom: 0;
+  
+          p{
+            display: none;
+           
+          }
+        }
+
+        .description{
+          transform: translate(0, 0%);
+        }
+      }
+    }
+  }
+
+}
