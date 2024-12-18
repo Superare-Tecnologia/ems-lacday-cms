@@ -26,18 +26,25 @@ $spacings: (
   110,
   120,
   125,
+  130,
+  135,
+  140,
+  145,
+  150,
+  155,
   160
 );
 
-.spacing-letter-2{ letter-spacing: -2px; }
-
+.spacing-letter-2 {
+  letter-spacing: -2px;
+}
 
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-@media(max-width: 767px){
+@media (max-width: 767px) {
   @each $size in $spacings {
     .py-#{$size} {
       padding-top: $size + 0px;
@@ -56,7 +63,7 @@ $spacings: (
     .padding-#{$size} {
       padding: $size + 0px;
     }
-  
+
     .my-#{$size} {
       margin-top: $size + 0px;
       margin-bottom: $size + 0px;
@@ -76,7 +83,6 @@ $spacings: (
     }
   }
 }
-
 
 @media (min-width: 767px) {
   @each $size in $spacings {
@@ -109,7 +115,7 @@ $spacings: (
     .mt-#{$size}__md {
       margin-top: $size + 0px;
     }
-    
+
     .mb-#{$size}__md {
       margin-bottom: $size + 0px;
     }
@@ -150,7 +156,7 @@ $spacings: (
     .mt-#{$size}__lg {
       margin-top: $size + 0px;
     }
-    
+
     .mb-#{$size}__lg {
       margin-bottom: $size + 0px;
     }

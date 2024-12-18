@@ -1,7 +1,9 @@
+
 import { Navbar } from './navbar'
 
+
 const defaultScripts = {
-  Navbar
+  Navbar,
 }
 
 const Main = {

@@ -4,10 +4,44 @@
     height: 100vh;
     max-height: 700px;
     overflow: hidden;
+  }
 
-    @media (max-width: 1200px) {
-      max-height: 520px;
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    &__image {
+      width: 100%;
+      max-height: 700px;
+      object-fit: cover;
+
+      @media(max-width: 767px){
+        max-height: 800px;
+      }
     }
+    
+    &__dots {
+      display: flex;
+      position: absolute;
+      right: 50%;
+      bottom:  3%;
+    }
+    
+    &__dot {
+      width: 16px;
+      height: 16px;
+      margin: 0 5px;
+      background-color: map.get($colors, "secondary-blue");
+      opacity: 0.25;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+    }
+  }
+  
+  .active {
+    opacity: 1;
   }
 
   .benefits {
