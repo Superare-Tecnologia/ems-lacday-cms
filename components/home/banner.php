@@ -1,35 +1,23 @@
 <section class="carousel mt-135__md mt-100 mt-135__lg">
+
     <div id="banner-slider" class="w-full keen-slider carousel__slider">
-        <picture class="keen-slider__slide">
-            <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp"
-                media="(min-width: 767px) and (max-width: 1400px)">
-            <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner_mobile.webp"
-                media="(max-width: 767px)">
-            <img src="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp" alt="Imagem 1"
-                class="carousel__image">
-        </picture>
-
-
-        <picture class="keen-slider__slide">
-            <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp"
-                media="(min-width: 767px) and (max-width: 1400px)">
-            <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner_mobile.webp"
-                media="(max-width: 767px)">
-            <img src="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp" alt="Imagem 1"
-                class="carousel__image">
-        </picture>
-
-        <picture class="keen-slider__slide">
-            <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp"
-                media="(min-width: 767px) and (max-width: 1400px)">
-            <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner_mobile.webp"
-                media="(max-width: 767px)">
-            <img src="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp" alt="Imagem 1"
-                class="carousel__image">
-        </picture>
+        <?php if (have_rows('header')): ?>
+            <?php while (have_rows('header')):
+                the_row();
+                $image_desktop = get_image_props(get_sub_field('banner_desktop'), '', 'full', false, true);
+                $image_mobile = get_image_props(get_sub_field('banner_mobile'), '', 'full', false, true);
+                ?>
+                <picture class="keen-slider__slide">
+                    <source srcset="<?= $image_desktop->url ?>" media="(min-width: 767px) and (max-width: 1400px)">
+                    <source srcset="<?= $image_mobile->url ?>" media="(max-width: 767px)">
+                    <img src="<?= $image_desktop->url ?>" alt="<?= $image_desktop->alt ?>" class="carousel__image">
+                </picture>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
     <div id="carousel-dots" class="carousel__dots"></div>
 </section>
+
 <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
