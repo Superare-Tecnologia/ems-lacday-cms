@@ -1,4 +1,4 @@
-<section class="carousel mt-100__md mt-100 mt-135__lg">
+<section class="carousel mt-135__md mt-100 mt-135__lg">
     <div id="banner-slider" class="w-full keen-slider carousel__slider">
         <picture class="keen-slider__slide">
             <source srcset="<?= get_template_directory_uri(); ?>/assets/img/home/banner.webp"
@@ -45,7 +45,7 @@
             loop: true,
             slides: {
                 perView: 1,
-                spacing: 0,
+                spacing: 10,
             },
         });
     }
