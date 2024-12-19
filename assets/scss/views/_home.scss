@@ -1,11 +1,4 @@
 &__homepage {
-  .banner {
-    position: relative;
-    height: 100vh;
-    max-height: 700px;
-    overflow: hidden;
-  }
-
   .carousel {
     position: relative;
     overflow: hidden;
@@ -262,31 +255,6 @@
       }
     }
   }
-
-  // .video {
-  //   .box-video {
-  //     position: relative;
-  //     cursor: pointer;
-
-  //     .play {
-  //       position: absolute;
-  //       top: 50%;
-  //       left: 50%;
-  //       transform: translate(-50%, -50%);
-  //       z-index: 1;
-  //     }
-  //   }
-
-  //   img {
-  //     width: 100%;
-  //     object-fit: cover;
-  //     object-position: center;
-
-  //     @media (max-width: 767px) {
-  //       height: 500px;
-  //     }
-  //   }
-  // }
 
   .drugstore {
     height: 100vh;
