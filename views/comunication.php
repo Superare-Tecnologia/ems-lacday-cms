@@ -13,48 +13,49 @@ $close = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox
 </svg>';
 
 
-$url_video = 'https://www.youtube.com/watch?v=TAs8eEpWsbU';
+$url_video = 'https://www.youtube.com/watch?v=EyYb1zPeUII&t';
 $url_tumbnail = get_template_directory_uri() . "/assets/img/home/thumb.webp";
 $embedUrl = convertToEmbedUrl($url_video);
-$urlVideo = 'https://www.youtube.com/watch?v=TAs8eEpWsbU';
+$urlVideo = 'https://www.youtube.com/watch?v=EyYb1zPeUII&t';
 $boolean_video = 'sim'; //true or false
 
 
 if ($boolean_video == 'sim') {
-  $type = 'iframe';
-  $video = $embedUrl;
+    $type = 'iframe';
+    $video = $embedUrl;
 } else {
-  $type = 'upload';
-  $video = $urlVideo;
+    $type = 'upload';
+    $video = $urlVideo;
 }
 
 ?>
 
 <main class="view view__comunication">
 
-<div class="video py-40 pt-125__lg">
-    <div class="box-video" style="background: url('<?= $url_tumbnail; ?>') no-repeat center; background-size: cover;">
-      <div class="play" data-src="<?= $video; ?>" data-type="<?= $type; ?>">
-        <?= $play; ?>
-      </div>
+    <div class="video py-40 pt-125__lg">
+        <div class="box-video"
+            style="background: url('<?= $url_tumbnail; ?>') no-repeat center; background-size: cover;">
+            <div class="play" data-src="<?= $video; ?>" data-type="<?= $type; ?>">
+                <?= $play; ?>
+            </div>
+        </div>
     </div>
-</div>
 
 
-<div class="popup-video"> 
-  <div class="close">
-    <div class="flex--force flex--aic flex--jcc flex--gap-7">
-      <?= $close; ?> 
-      <span class="ff-worksans color--white fs-16 fw-medium">fechar</span>
+    <div class="popup-video">
+        <div class="close">
+            <div class="flex--force flex--aic flex--jcc flex--gap-7">
+                <?= $close; ?>
+                <span class="ff-brevia color--white fs-16 fw-medium">fechar</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="video">
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="video">
-    </div>
-  </div>
-</div>
 
-    
+
 </main>
 
 <?php load_component('footer') ?>
