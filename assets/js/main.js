@@ -1,7 +1,9 @@
+import { Accordions } from './accordion';
 import { Navbar } from './navbar';
 import { Video } from './video';
 
 const defaultScripts = {
+  Accordions,
   Navbar,
   Video,
 };
