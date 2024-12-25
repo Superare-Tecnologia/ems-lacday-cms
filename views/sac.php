@@ -27,90 +27,242 @@
                 <li data-id="intolerancia">Intolerância</li>
             </ul>
             <ul id="uso" class="pt-50__lg pt-30__md pt-20">
-                <li class="duvidas__accordion-container">
-                    <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
-                        <p> É indicado o uso de Lacday por pessoas com alergias à proteína do leite?</p>
-                    </button>
-                    <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
-                        <p>
-                            Não. Lacday se destina a pessoas com dificuldade de digestão da lactose. É importante saber
-                            a diferença entre alergia às proteínas do leite e dificuldade de digerir a lactose.
-                            Recomenda-se acompanhamento médico.
-                        </p>
-                        <div class="duvidas__panel__more">
-                            <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
-                            <a>
-                                <h2 class="ff-brevia fs-20__lg fs-14 fw-bold">Intolerância à lactose e alergia ao leite
-                                </h2>
-                                <p class="ff-brevia fs-14 fs-16__lg">As reações adversas a alimentos, como intolerâncias
-                                    e alergias alimentares; LER MAIS</p>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="duvidas__accordion-container">
-                    <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
-                        <p> É indicado o uso de Lacday por pessoas com alergias à proteína do leite?</p>
-                    </button>
-                    <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
-                        <p>
-                            Não. Lacday se destina a pessoas com dificuldade de digestão da lactose. É importante saber
-                            a diferença entre alergia às proteínas do leite e dificuldade de digerir a lactose.
-                            Recomenda-se acompanhamento médico.
-                        </p>
-                        <div class="duvidas__panel__more">
-                            <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
-                            <a>
-                                <h2 class="ff-brevia fs-20__lg fs-14 fw-bold">Intolerância à lactose e alergia ao leite
-                                </h2>
-                                <p class="ff-brevia fs-14 fs-16__lg">As reações adversas a alimentos, como intolerâncias
-                                    e alergias alimentares; LER MAIS</p>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="duvidas__accordion-container">
-                    <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
-                        <p> É indicado o uso de Lacday por pessoas com alergias à proteína do leite?</p>
-                    </button>
-                    <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
-                        <p>
-                            Não. Lacday se destina a pessoas com dificuldade de digestão da lactose. É importante saber
-                            a diferença entre alergia às proteínas do leite e dificuldade de digerir a lactose.
-                            Recomenda-se acompanhamento médico.
-                        </p>
-                        <div class="duvidas__panel__more">
-                            <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
-                            <a>
-                                <h2 class="ff-brevia fs-20__lg fs-14 fw-bold">Intolerância à lactose e alergia ao leite
-                                </h2>
-                                <p class="ff-brevia fs-14 fs-16__lg">As reações adversas a alimentos, como intolerâncias
-                                    e alergias alimentares; LER MAIS</p>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="duvidas__accordion-container">
-                    <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
-                        <p> É indicado o uso de Lacday por pessoas com alergias à proteína do leite?</p>
-                    </button>
-                    <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
-                        <p>
-                            Não. Lacday se destina a pessoas com dificuldade de digestão da lactose. É importante saber
-                            a diferença entre alergia às proteínas do leite e dificuldade de digerir a lactose.
-                            Recomenda-se acompanhamento médico.
-                        </p>
-                        <div class="duvidas__panel__more">
-                            <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
-                            <a>
-                                <h2 class="ff-brevia fs-20__lg fs-14 fw-bold">Intolerância à lactose e alergia ao leite
-                                </h2>
-                                <p class="ff-brevia fs-14 fs-16__lg">As reações adversas a alimentos, como intolerâncias
-                                    e alergias alimentares; LER MAIS</p>
-                            </a>
-                        </div>
-                    </div>
-                </li>
+                <?php if (have_rows('sac_uso')): ?>
+                    <?php while (have_rows('sac_uso')):
+                        the_row(); ?>
+                        <?php
+                        $post_related = get_sub_field('post_related');
+                        $post_excerpt = '';
+                        $post_title = '';
+                        if ($post_related && isset($post_related['url'])) {
+                            $url = $post_related['url'];
+                            $post_id = url_to_postid($url);
+
+                            if ($post_id && get_post_type($post_id) === 'post') {
+                                $post_title = get_the_title($post_id);
+                                $post_excerpt = get_the_excerpt($post_id);
+                            }
+                        }
+                        ?>
+                        <li class="duvidas__accordion-container">
+                            <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
+                                <p><?= get_sub_field('question'); ?></p>
+                            </button>
+                            <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
+                                <p> <?= get_sub_field('answer'); ?> </p>
+                                <div class="duvidas__panel__more">
+                                    <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
+                                    <?php if (!empty($post_id)): ?>
+                                        <a href="<?= esc_url($url); ?>" target="_blank">
+                                            <h2 class="ff-brevia fs-20__lg fs-14 fw-bold"><?= esc_html($post_title); ?></h2>
+                                            <p class="ff-brevia fs-14 fs-16__lg"><?= esc_html($post_excerpt); ?> LER MAIS.</p>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+            </ul>
+            <ul id="efeitos" class="pt-50__lg pt-30__md pt-20 flex--none">
+                <?php if (have_rows('sac_efeitos')): ?>
+                    <?php while (have_rows('sac_efeitos')):
+                        the_row(); ?>
+                        <?php
+                        $post_related = get_sub_field('post_related');
+                        $post_excerpt = '';
+                        $post_title = '';
+                        if ($post_related && isset($post_related['url'])) {
+                            $url = $post_related['url'];
+                            $post_id = url_to_postid($url);
+
+                            if ($post_id && get_post_type($post_id) === 'post') {
+                                $post_title = get_the_title($post_id);
+                                $post_excerpt = get_the_excerpt($post_id);
+                            }
+                        }
+                        ?>
+                        <li class="duvidas__accordion-container">
+                            <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
+                                <p><?= get_sub_field('question'); ?></p>
+                            </button>
+                            <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
+                                <p> <?= get_sub_field('answer'); ?> </p>
+                                <div class="duvidas__panel__more">
+                                    <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
+                                    <?php if (!empty($post_id)): ?>
+                                        <a href="<?= esc_url($url); ?>" target="_blank">
+                                            <h2 class="ff-brevia fs-20__lg fs-14 fw-bold"><?= esc_html($post_title); ?></h2>
+                                            <p class="ff-brevia fs-14 fs-16__lg"><?= esc_html($post_excerpt); ?> LER MAIS.</p>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+            </ul>
+            
+            <ul id="efeitos" class="pt-50__lg pt-30__md pt-20 flex--none">
+                <?php if (have_rows('sac_efeitos')): ?>
+                    <?php while (have_rows('sac_efeitos')):
+                        the_row(); ?>
+                        <?php
+                        $post_related = get_sub_field('post_related');
+                        $post_excerpt = '';
+                        $post_title = '';
+                        if ($post_related && isset($post_related['url'])) {
+                            $url = $post_related['url'];
+                            $post_id = url_to_postid($url);
+
+                            if ($post_id && get_post_type($post_id) === 'post') {
+                                $post_title = get_the_title($post_id);
+                                $post_excerpt = get_the_excerpt($post_id);
+                            }
+                        }
+                        ?>
+                        <li class="duvidas__accordion-container">
+                            <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
+                                <p><?= get_sub_field('question'); ?></p>
+                            </button>
+                            <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
+                                <p> <?= get_sub_field('answer'); ?> </p>
+                                <div class="duvidas__panel__more">
+                                    <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
+                                    <?php if (!empty($post_id)): ?>
+                                        <a href="<?= esc_url($url); ?>" target="_blank">
+                                            <h2 class="ff-brevia fs-20__lg fs-14 fw-bold"><?= esc_html($post_title); ?></h2>
+                                            <p class="ff-brevia fs-14 fs-16__lg"><?= esc_html($post_excerpt); ?> LER MAIS.</p>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+            </ul>
+
+            <ul id="restricao" class="pt-50__lg pt-30__md pt-20 flex--none">
+                <?php if (have_rows('sac_restricao')): ?>
+                    <?php while (have_rows('sac_restricao')):
+                        the_row(); ?>
+                        <?php
+                        $post_related = get_sub_field('post_related');
+                        $post_excerpt = '';
+                        $post_title = '';
+                        if ($post_related && isset($post_related['url'])) {
+                            $url = $post_related['url'];
+                            $post_id = url_to_postid($url);
+
+                            if ($post_id && get_post_type($post_id) === 'post') {
+                                $post_title = get_the_title($post_id);
+                                $post_excerpt = get_the_excerpt($post_id);
+                            }
+                        }
+                        ?>
+                        <li class="duvidas__accordion-container">
+                            <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
+                                <p><?= get_sub_field('question'); ?></p>
+                            </button>
+                            <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
+                                <p> <?= get_sub_field('answer'); ?> </p>
+                                <div class="duvidas__panel__more">
+                                    <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
+                                    <?php if (!empty($post_id)): ?>
+                                        <a href="<?= esc_url($url); ?>" target="_blank">
+                                            <h2 class="ff-brevia fs-20__lg fs-14 fw-bold"><?= esc_html($post_title); ?></h2>
+                                            <p class="ff-brevia fs-14 fs-16__lg"><?= esc_html($post_excerpt); ?> LER MAIS.</p>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+            </ul>
+
+            <ul id="producao" class="pt-50__lg pt-30__md pt-20 flex--none">
+                <?php if (have_rows('sac_producao')): ?>
+                    <?php while (have_rows('sac_producao')):
+                        the_row(); ?>
+                        <?php
+                        $post_related = get_sub_field('post_related');
+                        $post_excerpt = '';
+                        $post_title = '';
+                        if ($post_related && isset($post_related['url'])) {
+                            $url = $post_related['url'];
+                            $post_id = url_to_postid($url);
+
+                            if ($post_id && get_post_type($post_id) === 'post') {
+                                $post_title = get_the_title($post_id);
+                                $post_excerpt = get_the_excerpt($post_id);
+                            }
+                        }
+                        ?>
+                        <li class="duvidas__accordion-container">
+                            <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
+                                <p><?= get_sub_field('question'); ?></p>
+                            </button>
+                            <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
+                                <p> <?= get_sub_field('answer'); ?> </p>
+                                <div class="duvidas__panel__more">
+                                    <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
+                                    <?php if (!empty($post_id)): ?>
+                                        <a href="<?= esc_url($url); ?>" target="_blank">
+                                            <h2 class="ff-brevia fs-20__lg fs-14 fw-bold"><?= esc_html($post_title); ?></h2>
+                                            <p class="ff-brevia fs-14 fs-16__lg"><?= esc_html($post_excerpt); ?> LER MAIS.</p>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+            </ul>
+
+            <ul id="intolerancia" class="pt-50__lg pt-30__md pt-20 flex--none">
+                <?php if (have_rows('sac_intolerancia')): ?>
+                    <?php while (have_rows('sac_intolerancia')):
+                        the_row(); ?>
+                        <?php
+                        $post_related = get_sub_field('post_related');
+                        $post_excerpt = '';
+                        $post_title = '';
+                        if ($post_related && isset($post_related['url'])) {
+                            $url = $post_related['url'];
+                            $post_id = url_to_postid($url);
+
+                            if ($post_id && get_post_type($post_id) === 'post') {
+                                $post_title = get_the_title($post_id);
+                                $post_excerpt = get_the_excerpt($post_id);
+                            }
+                        }
+                        ?>
+                        <li class="duvidas__accordion-container">
+                            <button class="ff-brevia color--white lh-120 fw-semibold fs-20__lg fs-16 duvidas__accordion">
+                                <p><?= get_sub_field('question'); ?></p>
+                            </button>
+                            <div class="duvidas__panel color--white lh-150 ff-brevia fs-14 fs-16__lg">
+                                <p> <?= get_sub_field('answer'); ?> </p>
+                                <div class="duvidas__panel__more">
+                                    <p class='ff-brevia fs-20__lg fw-bold color--white pb-16__lg'>Veja mais no Mundo Lac</p>
+                                    <?php if (!empty($post_id)): ?>
+                                        <a href="<?= esc_url($url); ?>" target="_blank">
+                                            <h2 class="ff-brevia fs-20__lg fs-14 fw-bold"><?= esc_html($post_title); ?></h2>
+                                            <p class="ff-brevia fs-14 fs-16__lg"><?= esc_html($post_excerpt); ?> LER MAIS.</p>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
             </ul>
         </article>
     </section>
